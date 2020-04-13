@@ -1,0 +1,16 @@
+# From https://github.com/nodejs/docker-node#how-to-use-this-image
+version: "2"
+services:
+  # change 'node' to a descriptive name for this service
+  node:
+    image: "node:lts-alpine"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    # pulls in this folder and any node_modules, package.json
+    volumes:
+      - ./:/home/node/app
+    expose:
+      - "5000"
+    command: "npm start"
