@@ -4,13 +4,15 @@
 [![TypeScript](https://badges.frapsoft.com/typescript/code/typescript.svg)](https://github.com/ellerbrock/typescript-badges/)
 
 
-This repository is an application template using Docker with Alpine Linux, Node LTS, and Typescript. It starts and exposes a web server on port 5000 that returns a *hello world* page for all requests. 
+This repository is an application template using Docker with Alpine Linux, Node LTS, and Typescript. It starts and exposes a web server on port `5000` that returns a *hello world* HTML page for all requests. 
 
 ## Installation
 
-1. Clone this repository.
-2. Install the node modules with `npm i`.  *(Docker currently pulls in the whole local repository folder as a mounted volume; this practice might change in the future for deploying to servers.)*
-3. Start Docker with `docker-compose run --rm --service-ports node` 
+1. [Install Docker](https://www.docker.com/products/docker-desktop), if you have not already done so.
+2. Clone or download this repository.
+3. Before running the container for the first time, you may need to build its image locally with `docker build .` from the root of this repository.
+4. Install the node modules with `npm i`.  *(Docker currently pulls in the whole local repository folder as a mounted volume; this practice might change in the future for deploying to servers.)*
+5. Start Docker with `docker-compose run --rm --service-ports node` 
 
      - `--rm` removes the container after it runs, to clean up
      - `--service-ports` makes sure that the port-forwarding works ([it does not forward by default](https://docs.docker.com/compose/reference/run/))
@@ -27,7 +29,7 @@ This repository uses the official Node Docker image for LTS on Alpine Linux. The
 - ✔️ Run as `node` user, instead of `root`.
 - ✔️ Use environment variable `NODE_ENV=production`.
 - ✔️ Put global dependencies in non-root user directory.
-- ... Limit how much memory container consumes.
+- ... [Limit how much memory](https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory) the container consumes.
 - ... Run [Docker Bench for Security](https://github.com/docker/docker-bench-security) audit script.
 - ... Bake startup script directly into Dockerfile with 
 
