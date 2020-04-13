@@ -1,15 +1,31 @@
 {
-  "name": "docker-starter",
+  "name": "ts-docker-starter",
   "version": "1.0.0",
-  "description": "Starter Docker repository for development, with Node12, Typescript, et al.",
+  "description": "Starter Docker repository for development, with Node LTS, TypeScript, et al.",
+  "keywords": [
+    "typescript",
+    "docker",
+    "starter",
+    "project",
+    "alpine",
+    "node"
+  ],
+  "homepage": "https://github.com/valtech-sd/ts-docker-starter#readme",
+  "bugs": {
+    "url": "https://github.com/valtech-sd/ts-docker-starter/issues"
+  },
+  "license": "MIT",
+  "author": "Valtech: Your Name Here",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valtech-sd/ts-docker-starter.git"
+  },
   "main": "index.js",
   "scripts": {
     "build": "rimraf ./built && tsc",
     "start": "node ./built/index.js",
     "test": "mocha -r ts-node/register ./test/**/*.ts"
   },
-  "author": "Valtech: Your Name Here",
-  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "@types/mocha": "^7.0.2",
