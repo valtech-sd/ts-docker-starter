@@ -4,6 +4,8 @@ services:
   # change 'node' to a descriptive name for this service
   node:
     image: "node:lts-alpine"
+    # if issues with receiving signals, uncomment this line
+    #init: true
     user: "node"
     working_dir: /home/node/app
     environment:
