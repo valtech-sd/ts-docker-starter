@@ -9,7 +9,10 @@ This repository is an application template using Docker with Alpine Linux, Node 
 ## Installation
 
 1. [Install Docker](https://www.docker.com/products/docker-desktop), if you have not already done so.
-2. Clone or download this repository.
+2. Clone or download this repository. *If starting a new project, you may want to use [degit](https://github.com/Rich-Harris/degit) to clone and strip the git history:* 
+
+        npx degit valtech-sd/ts-docker-starter ./my-new-docker-app  
+
 3. Before running the container for the first time, you may need to build its image locally with `docker build .` from the root of this repository.
 4. Install the node modules with `npm i`.  *(Docker currently pulls in the whole local repository folder as a mounted volume; this practice might change in the future for deploying to servers.)*
 5. Start Docker with `docker-compose run --rm --service-ports node` 
