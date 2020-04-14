@@ -13,9 +13,13 @@ This repository is an application template using Docker with Alpine Linux, Node 
 
         npx degit valtech-sd/ts-docker-starter ./my-new-docker-app  
 
-3. Before running the container for the first time, you may need to build its image locally with `docker build .` from the root of this repository.
-4. Install the node modules with `npm i`.  *(Docker currently pulls in the whole local repository folder as a mounted volume; this practice might change in the future for deploying to servers.)*
-5. Start Docker with `docker-compose run --rm --service-ports node` 
+3. From the root of this repository, before running the container for the first time: 
+
+     - You may need to build its image locally with `docker build .`.
+     - Install the node modules with `npm i`.  *(Docker currently pulls in the whole local repository folder as a mounted volume; this practice might change in the future for deploying to servers.)*
+     - Generate the `.js` files from Typescript by running `npm run build`.
+
+4. Start Docker with `docker-compose run --rm --service-ports node` 
 
      - `--rm` removes the container after it runs, to clean up
      - `--service-ports` makes sure that the port-forwarding works ([it does not forward by default](https://docs.docker.com/compose/reference/run/))
